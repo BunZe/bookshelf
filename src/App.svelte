@@ -15,6 +15,7 @@
 <footer>
 	<div>Made with&nbsp</div>
 	<a href="https://svelte.dev/"><img src="https://raw.githubusercontent.com/sveltejs/branding/master/svelte-horizontal.svg" alt="Svelte"></a>
+	<a href="https://github.com/bunze/bookshelf"><img height="32" width="32" style=" filter: invert(1); margin-left: 1em" src="https://unpkg.com/simple-icons@v4/icons/github.svg" alt="github"></a>
 </footer>
 
 <style>
@@ -25,6 +26,7 @@
 		grid-gap: 3rem;
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		justify-items: center;
+	
 	}
 
 	footer {
@@ -35,6 +37,8 @@
 		grid-row-start: 2;
 		grid-row-end: 3;
 		align-items: center;
+		font-weight: 100;
+		font-size: 0.8em;
 	}
 
 	footer img, footer a {
