@@ -1,6 +1,5 @@
 <script>
   import { scale, slide } from "svelte/transition";
-  import { onMount } from "svelte";
   import { cubicOut } from "svelte/easing";
 
 
@@ -10,10 +9,8 @@
   export let subtitle = null;
   export let author;
 
-  let ready = false;
   let showDownload = false;
 
-  onMount(() => (ready = true));
 </script>
 
 <style>
@@ -45,7 +42,7 @@
   }
 
   .book h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 0;
   }
 
@@ -76,25 +73,23 @@
   }
 </style>
 
-{#if ready}
-  <div
-    on:click={() => (showDownload = !showDownload)}
-    on:mouseleave={() => (showDownload = false)}
-    class="book"
-    class:showDownload
-    in:scale={{ duration: 800, easing: cubicOut }}>
-    <h1>{title}</h1>
-    {#if subtitle}
-      <h3>{subtitle}</h3>
-    {/if}
-    <p>{author}</p>
-    {#if showDownload}
-      <div
-        transition:slide={{ duration: 100, easing: cubicOut }}
-        class="downloadOptions">
-        <a href={downloads.epub} download>.epub</a>
-        <a href={downloads.pdf} download>.pdf</a>
-      </div>
-    {/if}
-  </div>
-{/if}
+<div
+  on:click={() => (showDownload = !showDownload)}
+  on:mouseleave={() => (showDownload = false)}
+  class="book"
+  class:showDownload
+  in:scale={{ duration: 800, easing: cubicOut }}>
+  <h1>{title}</h1>
+  {#if subtitle}
+    <h3>{subtitle}</h3>
+  {/if}
+  <p>{author}</p>
+  {#if showDownload}
+    <div
+      transition:slide={{ duration: 100, easing: cubicOut }}
+      class="downloadOptions">
+      <a href={downloads.epub} download>.epub</a>
+      <a href={downloads.pdf} download>.pdf</a>
+    </div>
+  {/if}
+</div>
