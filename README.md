@@ -3,6 +3,8 @@
 
 bookshelf reads all files in a given directory (which was specfically structured) and creates a nice bookshelf for it for anyone to enjoy.
 
+![preview](https://i.imgur.com/R4ggJ2P.png)
+
 ## Usage
 
 ### Files
